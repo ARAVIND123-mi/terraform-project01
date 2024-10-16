@@ -22,6 +22,7 @@ resource "aws_lb_target_group_attachment" "attachment1" {
   port             = 80
 
   depends_on = [
+    aws_lb_target_group.target-elb,
     aws_instance.demonistance,
   ]
 }
@@ -33,6 +34,7 @@ resource "aws_lb_target_group_attachment" "attachment2" {
   port             = 80
 
   depends_on = [
+    aws_lb_target_group.target-elb,
     aws_instance.demonistance1,
   ]
 }
